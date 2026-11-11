@@ -9,9 +9,9 @@
 5. Complete the code challenge in the file `gradebook_challenge.py` in this same repository. You can edit it in the browser or download it and work in your usual editor, then upload the finished file.
 6. When everything is done, copy the web address (URL) of your forked repository and submit that link on Moodle.
 
-Name:
-Section:
-Date:
+Name: Keegan Conard
+Section: CIS 105
+Date: 11/11/26
 
 ---
 
@@ -21,7 +21,7 @@ Answer each question in your own words or with the exact output, as asked. Write
 
 **1.** A dictionary stores data as key-value pairs. Write one line of Python that creates a dictionary named `student` with the keys `"name"` and `"major"` and values of your choosing.
 
-Your answer:
+Your answer: student = {"name": "Jennifer", "major": "Finance"}
 
 **2.** What is the output of this code?
 
@@ -30,27 +30,29 @@ grades = {"quiz1": 85, "quiz2": 92, "quiz3": 78}
 print(grades["quiz2"])
 ```
 
-Your answer:
+Your answer: 92
 
 **3.** What is the difference between `grades["quiz4"]` and `grades.get("quiz4")` when the key `"quiz4"` does not exist in the dictionary?
 
-Your answer:
+Your answer: grades["quiz4"] will return an error message when it is run in the terminal but "grades.get("quiz4") will print "None" instead of an error.
 
 **4.** Write the line of code that adds a new key `"quiz4"` with the value 88 to the `grades` dictionary above. Then write the line that changes `"quiz1"` to 90.
 
-Your answer:
+Your answer: grades = {"quiz1": 85, "quiz2": 92, "quiz3": 78, "quiz4": 88}
+grades["quiz1"] = 90
+print(grades)
 
 **5.** What do the dictionary methods `.keys()`, `.values()`, and `.items()` each return?
 
-Your answer:
+Your answer: keys() returns a list of the dictionary's keys, values() returns all of the values in the dictionary and items() returns a view object.
 
 **6.** In one or two sentences each, explain the main difference between a list, a tuple, and a set. When would you choose each one?
 
-Your answer:
+Your answer: A list is a collection of ordered, mutable elements that can hold a variety of data types. It is mostly used if you need to add, remove, or insert elements into a program often. A tuple is an ordered, immutable collection of elements that is mostly used when data should not be modified after creation. And a set is an unordered collection of unique elements that is best used to remove duplicates automatically. 
 
 **7.** True or false, and explain why: in Python, the expression `"quiz1" in grades` checks whether `"quiz1"` is one of the values in the dictionary.
 
-Your answer:
+Your answer: False. It checks whether "quiz1" is a key in the dictionary and not a value
 
 **8.** What is the output of this code?
 
@@ -59,15 +61,15 @@ student = {"name": "Alex", "courses": {"current": "CIS 105", "credits": 3}}
 print(student["courses"]["current"])
 ```
 
-Your answer:
+Your answer: CIS 105
 
 **9.** Name two different ways to remove the key `"quiz3"` from the `grades` dictionary. What is one difference between them?
 
-Your answer:
+Your answer: Two ways to remove the key are by using pop() or del, and they are different because pop() returns the removed value while del simply deletes the key.
 
 **10.** What does `len(grades)` return for the dictionary in Question 2, and what exactly is it counting?
 
-Your answer:
+Your answer: It returns "3" because there are 3 key pairs in the dictionary.
 
 ---
 
