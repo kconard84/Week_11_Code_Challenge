@@ -1,6 +1,6 @@
 # CIS 105 - Code Challenge: Grade Book
-# Name:
-# Section:
+# Name: Keegan Conard
+# Section: CIS 105
 #
 # Complete the five functions below where you see # TODO.
 # Do not change the test code at the bottom of the file.
@@ -14,14 +14,19 @@
 def add_student(book, name):
     """Add a new student with an empty score list.
     If the student is already in the book, print a message and change nothing."""
-    # TODO
+    if name in book:
+        print(f"Student '{name}' already exists in the grade book.")
+    else:
+        book[name] = []
     pass
 
 
 def add_grade(book, name, grade):
     """Add a score to a student's list.
     If the student is not in the book yet, add the student first, then the score."""
-    # TODO
+    if name not in book:
+        add_student(book, name)
+    book[name].append(grade) 
     pass
 
 
@@ -29,22 +34,36 @@ def student_average(book, name):
     """Return the average of a student's scores.
     Use .get() so this returns None instead of crashing
     if the student is not in the book."""
-    # TODO
+    scores = book.get(name)
+    if not scores:
+        return None
+    return sum(scores) / len(scores)
     pass
 
 
 def top_student(book):
     """Return the name of the student with the highest average score."""
-    # TODO
+    best_name = None
+    best_average = None
+
+    for name in book:
+        average = student_average(book, name)
+        if average is not None and (best_average is None or average > best_average):
+            best_name = name
+            best_average = average
+
+    return best_name
     pass
 
 
 def print_report(book):
     """Print every student, their scores, and their average,
     one student per line. Loop over the dictionary with .items()."""
-    # TODO
+    for name, scores in book.items():
+        average = student_average(book, name)
+        average_text = "N/A" if average is None else f"{average:.1f}"
+        print(f"{name}: {scores} Average: {average_text}")
     pass
-
 
 # ---------------- TEST CODE - DO NOT CHANGE BELOW THIS LINE ----------------
 
